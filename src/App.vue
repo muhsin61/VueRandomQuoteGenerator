@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Random @change="change" />
-    <Quote v-if="control==true"  @handleLook="handleLook" :msg="message" />
-    <Quotes v-else :msgLook="msgLook" />
+    <Quote v-if="control==true"  @handleLook="handleLook" :msg="randomQuote" />
+    <Quotes v-else :quotes="RandomQuotes" />
     <footer>muhsin61@DevChallenge.io</footer>
   </div>
 </template>
@@ -24,8 +24,8 @@ export default {
     },
   data() {
     return {
-      message: {quote:"",author:"",quoteGenre:""},
-      msgLook : null,
+      randomQuote: {quote:"",author:"",quoteGenre:""},
+      RandomQuotes : null,
       control: true,
       authorName: "Bill%20Gates"
     };
@@ -37,21 +37,22 @@ export default {
         .then(data => {
           console.log(data.quote.quoteText);
           console.log(data.quote.quoteAuthor);
-          this.message.quote = data.quote.quoteText;
-          this.message.author = data.quote.quoteAuthor;
-          this.message.quoteGenre = data.quote.quoteGenre;
+          this.randomQuote.quote = data.quote.quoteText;
+          this.randomQuote.author = data.quote.quoteAuthor;
+          this.randomQuote.quoteGenre = data.quote.quoteGenre;
         }) 
         .catch(err => console.log(err));
         this.control=true;
       },
       handleLook(){
-        this.authorName = this.message.author.replace(" ","%20")
+        console.log("çalıştı1")
+        this.authorName = this.randomQuote.author.replace(" ","%20")
         fetch("https://quote-garden.herokuapp.com/api/v2/authors/"+this.authorName+"?page=1&limit=10")
         .then(response => response.json())
         .then(data => {
         console.log(data);
-        this.msgLook = data.quotes;
-        console.log(this.msgLook)
+        this.RandomQuotes = data.quotes;
+        console.log(this.quotes)
         this.control= false;
         }) 
         .catch(err => console.log(err));

@@ -1,42 +1,54 @@
 <template>
-    <div>
-        <h3>{{msgLook[1].quoteAuthor}}</h3>
-        <ul>
-            <li v-for="look in msgLook" :key="look._id">{{look.quoteText}}</li>
-        </ul>
+  <div>
+    <h3>{{ quotes[1].quoteAuthor }}</h3>
+    <div class="quotes">
+      <ul>
+        <li v-for="look in quotes" :key="look._id">{{ look.quoteText }}</li>
+      </ul>
     </div>
+  </div>
 </template>
 <script>
 export default {
-    name: "Quote",
-  props:{
-      msgLook: Array,
+  name: "Quote",
+  props: {
+    quotes: Array,
   },
-}
+};
 </script>
 <style scoped>
-h3{
-    text-align: left;
+div{
     font-family: Raleway;
     font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 42px;
-    margin: 5% 200px 0px 200px;
-    padding-left: 10%;
 }
-li{
-    border-left: 8px solid #F7DF94;
-    margin: 5% 200px 0px 200px;
-    list-style-type:none;
-    font-family: Raleway;
-    font-weight: 500;
-    font-size: 36px;
-    font-style: normal;
-    padding-left: 5%;
+.quotes{
+    display: flex;
+    justify-content: center;
 }
-@media screen and (max-width: 15cm){
-    li{margin: 20% 200px 0px 0px;
-    width: 100%;}
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li {
+  border-left: 8px solid #f7df94;
+  width: 672px;
+  list-style-type: none;
+  font-size: 36px;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 15cm) {
+  li {
+    width: 100%;
+    left: 0;
+  }
 }
 </style>

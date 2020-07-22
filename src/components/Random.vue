@@ -1,46 +1,52 @@
 <template>
-    <div class="change"> 
-        <button class="change" @click="handleClick">random <i class="material-icons rec">autorenew</i></button>
+  <div class="change">
+    <div>
+      <p @click="handleClick">random</p>
+      <i class="material-icons rec">autorenew</i>
     </div>
+  </div>
 </template>
 <script>
 export default {
-name: "Quote",
+  name: "Quote",
 
   methods: {
     handleClick() {
-      this.$emit("change",true)
+      this.$emit("change", true);
     },
-  }
-}
+  },
+};
 </script>
 <style scoped>
-.change{
-    position: relative;
-    right: -20%;
+.change {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+  padding-right: 30px;
+  
 }
-.change{
-    position: relative;
-    top: -10px;
-    border:none;
-    color: #333333;
-    background: none;
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 120%;
+.change div{
+  cursor: pointer;
 }
-.rec{
-    position: relative;
-    left: 16.67%;
-    right: 16.67%;
-    top: 3px;
-    bottom: 10%;
-    font-size: 20px;
+.change p {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  color: #333333;
+  background: none;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
 }
-.back{
-    border: none;
-    background: none;;
+.rec {
+  position: relative;
+  top: 5px;
+  font-size: 20px;
+  transition: 1s;
 }
 </style>
