@@ -3,9 +3,11 @@
     <div class="myQuote"><p class="quote">{{ msg.quote }}</p></div>
     <div class="look" @click="handleLook">
       <div class="quoteInfo">
+        <div>
+          <p class="author">{{ msg.author }}</p>
+          <p class="genre">{{ msg.quoteGenre }}</p>
+        </div>
         <span class="material-icons ok">arrow_right_alt</span>
-        <p class="author">{{ msg.author }}</p>
-        <p class="genre">{{ msg.quoteGenre }}</p>
       </div>
     </div>
   </div>
@@ -24,6 +26,10 @@ export default {
 };
 </script>
 <style scoped>
+p{
+  margin: 0;
+  padding: 0;
+}
 .looks {
   display: block;
   text-align: left;
@@ -50,6 +56,9 @@ export default {
   font-size: 36px;
   font-style: normal;
 }
+.genre{
+  font-size: 15px;
+}
 .look {
   display: flex;
   justify-content: center;
@@ -59,40 +68,16 @@ export default {
   margin-top: 20px;
 }
 .quoteInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 672px;
   height: 151px;
   cursor: pointer;
   transition: ease-in 0.5s;
-  position: relative;
   font-family: Raleway;
-  font-style: normal;
-}
-.quoteInfo p{
-  padding: 0;
-  margin: 0;
-  position: relative;
-  top: 50px;
-  left: 50px;
-}
-.author {
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-  color: #828282;
-  text-align: left;
-}
-.genre {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  color: #828282;
-  text-align: left;
 }
 .ok {
-  position: relative;
-  top: 50px;
-  float: right;
   color: white;
   font-size: 48px;
   width: 50px;
@@ -107,6 +92,10 @@ export default {
     margin: 5px;
     padding: 5px;
     width: 100%;
+    font-size: 25px;
+  }
+  .author{
+    font-size: 25px;
   }
 }
 

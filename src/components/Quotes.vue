@@ -26,6 +26,7 @@ div{
     justify-content: center;
 }
 h3 {
+  position: relative;
   text-align: center;
   font-weight: bold;
   font-size: 36px;
@@ -49,6 +50,7 @@ li {
   li {
     width: 100%;
     left: 0;
+    font-size: 25px;
   }
 }
 </style>

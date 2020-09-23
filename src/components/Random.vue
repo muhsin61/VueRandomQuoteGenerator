@@ -20,33 +20,18 @@ export default {
 <style scoped>
 .change {
   position: relative;
-  display: flex;
-  justify-content: flex-end;
-  text-align: center;
-  align-items: center;
-  padding-right: 30px;
-  
+  margin: 30px 30px 0 0;
+  float: right;
 }
 .change div{
+  position: relative;
+  margin-left: auto;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .change p {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  color: #333333;
-  background: none;
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 120%;
-}
-.rec {
-  position: relative;
-  top: 5px;
-  font-size: 20px;
-  transition: 1s;
+  font-weight: 700;
 }
 </style>
